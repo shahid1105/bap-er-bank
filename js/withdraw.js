@@ -4,8 +4,13 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
     withdrawField.value = '';
 
-    if(isNaN(newWithdrawAmount)){
-        alert('Please provide a valid number')
+
+    if(newWithdrawAmount <= 0){
+        alert('Please provide a valid number');
+        return;
+    }
+    else if(isNaN(newWithdrawAmount)){
+        alert('Please provide a valid number');
         return;
     }
 

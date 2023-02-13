@@ -9,9 +9,12 @@ document.getElementById('btn-deposit').addEventListener('click', function (){
     // step-7: deposite field clear
     depositField.value = '';
 
-    
-    if(isNaN(newDepositAmount)){
-        alert('Please provide a valid number')
+    if(newDepositAmount <= 0){
+        alert('Please provide a valid number');
+        return;
+    }
+    else if(isNaN(newDepositAmount)){
+        alert('Please provide a valid number');
         return;
     }
 
@@ -26,6 +29,7 @@ document.getElementById('btn-deposit').addEventListener('click', function (){
     const currentDepositTotal = previousDepositTotal + newDepositAmount;
 
     depositTotalElement.innerText = currentDepositTotal;
+    
 
     // step-5: add number main balance
     const totalMainBalance = document.getElementById('main-balance');
